@@ -36,6 +36,11 @@ def ec2(name, r):
 
   body = '<body>'
   header = '<h1 align="center">AWS EC2 </h1>'
+  act = '<h1 align="center">apis to start stop create and terminate </h1>'
+  b = '<h1 align="center">to create ip:8080/ami-id/region/instancetype </h1>'
+  c = '<h1 align="center">to start ip:8081/instance-id/region </h1>'
+  d = '<h1 align="center">to stop ip:8082/instance-id/region </h1>'
+  e = '<h1 align="center">to terminate ip:8083/instance-id/region </h1>'
   table = '<table border=1 align="center" id="myTable" class="table table-striped mt32 customers-list"><tr><th>InstanceName</th><th>OwnerName</th><th>ProjectName</th><th>InstanceId</th><th>InstanceState</th><th>InstanceType</th></tr>'
   end = "</table>"
   search= '<center><input type="search" placeholder="Search..." class="form-control search-input" data-table="customers-list"/></center>'
@@ -45,7 +50,7 @@ def ec2(name, r):
  # bcd = ' <script>function myFunction() {var input, filter, table, tr, td, i, txtValue;input = document.getElementById("myInput");filter = input.value.toUpperCase();table = document.getElementById("myTable");tr = table.getElementsByTagName("tr");for (i = 0; i < tr.length; i++) {td = tr[i].getElementsByTagName("td")[0];if (td) {txtValue = td.textContent || td.innerText;if (txtValue.toUpperCase().indexOf(filter) > -1) {tr[i].style.display = "";} else {tr[i].style.display = "none";}}}}</script>'
   bar = "<script>(function(document) {'use strict';var TableFilter = (function(myArray) {var search_input;function _onInputSearch(e) {search_input = e.target;var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));myArray.forEach.call(tables, function(table) {myArray.forEach.call(table.tBodies, function(tbody) {myArray.forEach.call(tbody.rows, function(row) {var text_content = row.textContent.toLowerCase();var search_val = search_input.value.toLowerCase();row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';});});});}return {init: function() {var inputs = document.getElementsByClassName('search-input');myArray.forEach.call(inputs, function(input) {input.oninput = _onInputSearch;});}};})(Array.prototype);document.addEventListener('readystatechange', function() {if (document.readyState === 'complete') {TableFilter.init();}});})(document);</script>"
   Func = open("/root/ec2-dashboard-python-app/myproject/templates/table.html","w")
-  Func.write(header+body+search+table+tr+end+bar)
+  Func.write(header+body+search+table+tr+end+bar+act+b+c+d+e)
   Func.close()
 
 
